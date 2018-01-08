@@ -10,6 +10,6 @@ import com.javasampleapproach.mongodbrestapi.model.User;
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
 public interface UserRepository extends MongoRepository<User, String> {
     List<User> findByEmail(@Param("email") String name);
-    List<User> findByPwd(@Param("pwd") String name);
+
 
 }
