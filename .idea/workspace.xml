@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f8666bdb-d738-42fe-b6ca-1f11b689c01b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javasampleapproach/mongodbrestapi/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/javasampleapproach/mongodbrestapi/repository/UserRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -404,7 +403,7 @@
       <workItem from="1515218030837" duration="2878000" />
       <workItem from="1515238664510" duration="7908000" />
       <workItem from="1515385202958" duration="3672000" />
-      <workItem from="1515402707768" duration="1245000" />
+      <workItem from="1515402707768" duration="1391000" />
     </task>
     <task id="LOCAL-00001" summary="Deploy">
       <created>1515146109921</created>
@@ -448,11 +447,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515386734447</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Deploy11">
+      <created>1515403975021</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1515403975021</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24601000" />
+    <option name="totallyTimeSpent" value="24747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -502,7 +508,8 @@
     <MESSAGE value="Deploy2" />
     <MESSAGE value="Deployf1" />
     <MESSAGE value="Deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deploy" />
+    <MESSAGE value="Deploy11" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deploy11" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
