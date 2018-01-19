@@ -21,7 +21,7 @@ public class User implements Serializable {
     }
     @Override
     public String toString() {
-        return String.format("Users[id=%s, email='%s', password='%s']", id, email, password);
+        return String.format("Users[id=%s, username='%s',email='%s', password='%s']", id, username,email, password);
     }
 
 
@@ -32,8 +32,6 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
 
     public String getPassword() {
         return password;
