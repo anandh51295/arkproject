@@ -20,9 +20,6 @@ public class UController {
 
     @RequestMapping(value = "/{id}")
     public User read(@PathVariable String id){
-        if(id.equalsIgnoreCase("not")){
-            throw new RuntimeException("something went wrong");
-        }
 
         return  userRepository.findOne(id);
     }
