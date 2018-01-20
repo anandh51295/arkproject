@@ -19,9 +19,10 @@ public class User implements Serializable {
     public User() {
         this.id = COUNTER.incrementAndGet();
     }
+
     @Override
     public String toString() {
-        return String.format("Users[id=%s, username='%s',email='%s', password='%s']", id, username,email, password);
+        return String.format("Users[id=%s, username='%s',email='%s', password='%s']", id, username, email, password);
     }
 
 
@@ -48,4 +49,5 @@ public class User implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
+
 }
