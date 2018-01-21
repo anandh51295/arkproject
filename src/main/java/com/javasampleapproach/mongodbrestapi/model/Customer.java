@@ -14,9 +14,10 @@ public class Customer implements Serializable {
 	@Id
     private String id;
  
-    private String firstName;
+    private String userName;
  
-    private String lastName;
+    private String passWord;
+    private String eMail;
 
 	public String getId() {
 		return id;
@@ -25,29 +26,33 @@ public class Customer implements Serializable {
 	public void setId(String id) {
 		this.id = id;
 	}
- 
+
     @Override
     public String toString() {
-        return String.format("Customer[id=%s, firstName='%s', lastName='%s']", id, firstName, lastName);
+        return String.format("Customer[id=%s, userName='%s', passWord='%s', eMail='%s']", id, userName, passWord,eMail);
     }
 
-
-	public String getFirstName() {
-		return firstName;
+	public String getUserName() {
+		return userName;
 	}
 
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-
-	public String getLastName() {
-		return lastName;
+	public String getPassWord() {
+		return passWord;
 	}
 
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public String geteMail() {
+		return eMail;
+	}
+
+	public void seteMail(String eMail) {
+		this.eMail = eMail;
 	}
 }

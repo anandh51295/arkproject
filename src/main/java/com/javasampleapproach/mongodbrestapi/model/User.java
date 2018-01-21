@@ -13,7 +13,10 @@ public class User implements Serializable {
     private String email;
     private String password;
 
-
+    public User(String username, String password){
+        this.username = username;
+        this.password = password;
+    }
     private static AtomicLong COUNTER = new AtomicLong(0L);
 
     @PersistenceConstructor

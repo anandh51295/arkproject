@@ -10,6 +10,8 @@ import com.javasampleapproach.mongodbrestapi.model.Customer;
 
 @RepositoryRestResource(collectionResourceRel = "customer", path = "customer")
 public interface CustomerRepository extends MongoRepository<Customer, String> {
-	List<Customer> findByLastName(@Param("name") String name);
-	List<Customer> findByFirstName(@Param("name") String name);
+	List<Customer> findByPassWord(@Param("password") String name);
+	List<Customer> findByUserName(@Param("username") String name);
+	List<Customer> findByEmail(@Param("email") String name);
+
 }

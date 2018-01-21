@@ -7,7 +7,7 @@ import com.javasampleapproach.mongodbrestapi.model.User;
 import com.javasampleapproach.mongodbrestapi.repository.UserRepository;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/user")
 public class UController {
 
     @Autowired
@@ -18,18 +18,19 @@ public class UController {
         userRepository.save(user);
     }
 
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "{id}")
     public User read(@PathVariable String id){
-
         return  userRepository.findOne(id);
     }
+
+
 
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void update(@RequestBody User user){
         userRepository.save(user);
     }
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable String id) {
         userRepository.delete(id);
     }
