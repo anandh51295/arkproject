@@ -10,7 +10,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import com.javasampleapproach.mongodbrestapi.model.User;
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
 public interface UserRepository extends MongoRepository<User, String> {
-    List<User> findByEmail(@Param("email") String name);
+
    // @Query("db.user.findOne({'username':$ark,'password':$spy})")
     List<User> findByUsername(@Param("username") String name);
     List<User> findByPassword(@Param("password") String name);
