@@ -13,6 +13,7 @@ public class User implements Serializable {
     private String email;
     private String password;
 
+
     private static AtomicLong COUNTER = new AtomicLong(0L);
 
     @PersistenceConstructor
@@ -49,5 +50,6 @@ public class User implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
+
 
 }
