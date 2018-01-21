@@ -23,9 +23,6 @@ public class UController {
         return  userRepository.findOne(id);
     }
 
-
-
-
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void update(@RequestBody User user){
         userRepository.save(user);

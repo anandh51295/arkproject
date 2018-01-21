@@ -12,6 +12,5 @@ import com.javasampleapproach.mongodbrestapi.model.Customer;
 public interface CustomerRepository extends MongoRepository<Customer, String> {
 	List<Customer> findByPassWord(@Param("password") String name);
 	List<Customer> findByUserName(@Param("username") String name);
-	List<Customer> findByEmail(@Param("email") String name);
 
 }
