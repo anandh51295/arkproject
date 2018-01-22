@@ -10,13 +10,11 @@ public class User implements Serializable {
     @Id
     private long id;
     private String username;
-    private String email;
-    private String password;
+    private String date;
+    private String time;
+    private String url;
 
-    public User(String username, String password){
-        this.username = username;
-        this.password = password;
-    }
+
     private static AtomicLong COUNTER = new AtomicLong(0L);
 
     @PersistenceConstructor
@@ -26,25 +24,11 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("Users[id=%s, username='%s',email='%s', password='%s']", id, username, email, password);
+        return String.format("Crawl[id=%s, username='%s',url='%s', date='%s, time='%s'']", id, username, url, date,time);
     }
 
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getUsername() {
         return username;
@@ -54,5 +38,27 @@ public class User implements Serializable {
         this.username = username;
     }
 
+    public String getDate() {
+        return date;
+    }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

@@ -29,7 +29,7 @@ public class Customer implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%s, userName='%s', passWord='%s', eMail='%s']", id, userName, passWord,eMail);
+        return String.format("Customer[id=%s, username='%s', password='%s', email='%s']", id, userName, passWord,eMail);
     }
 
 	public String getUserName() {
