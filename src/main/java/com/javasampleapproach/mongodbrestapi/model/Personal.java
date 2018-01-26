@@ -34,7 +34,7 @@ public class Personal implements Serializable{
 
     @Override
     public String toString() {
-        return String.format("personal:[username="+username+",password="+password+",email="+email+",role="+role+",preferences:[activeProject="+ActProjectName+",notification_preferences:[status="+status+",DefectNotification="+DefectNotification+",page-status="+page_status+"],Dasboard_preferences:[Widgets:[widget_name:["+Widgets_name+"],widget_status:["+widget_status+"],order:["+order+"],icons="+icons+"]]],security:[question="+question+",answer="+answer+"],Projects:[Projectname:["+ProjectName+"],URL:["+URL+"],Description:["+Description+"]]]]");
+        return String.format("personal:[username="+username+",password="+password+",email="+email+",role="+role+",preferences:[activeProject="+ActProjectName+",notification_preferences:[status="+status+",DefectNotification="+DefectNotification+",page-status="+page_status+"],Dasboard_preferences:[Widgets:[widget_name:["+Widgets_name+"],widget_status:["+widget_status+"],order:["+order+"],icons="+icons+"]]],security:[question="+question+",answer="+answer+"],Projects:[Projectname:["+ProjectName+"],URL:["+URL+"],Description:["+Description+"]]]");
     }
 
     public String getId() {
