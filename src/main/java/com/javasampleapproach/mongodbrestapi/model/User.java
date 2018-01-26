@@ -8,19 +8,19 @@ import java.io.Serializable;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    private long id;
+    private String id;
     private String username;
     private String date;
     private String time;
     private String url;
 
 
-    private static AtomicLong COUNTER = new AtomicLong(0L);
-
-    @PersistenceConstructor
-    public User() {
-        this.id = COUNTER.incrementAndGet();
-    }
+//    private static AtomicLong COUNTER = new AtomicLong(0L);
+//
+//    @PersistenceConstructor
+//    public User() {
+//        this.id = COUNTER.incrementAndGet();
+//    }
 
     @Override
     public String toString() {
@@ -28,7 +28,13 @@ public class User implements Serializable {
     }
 
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
