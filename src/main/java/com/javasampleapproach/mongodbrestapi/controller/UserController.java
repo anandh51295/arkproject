@@ -3,6 +3,7 @@ package com.javasampleapproach.mongodbrestapi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.javasampleapproach.mongodbrestapi.model.Customer;
 import com.javasampleapproach.mongodbrestapi.repository.CustomerRepository;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
 
 @RestController
 @RequestMapping("/details")
@@ -19,13 +23,19 @@ public class UserController {
     @Autowired
     CustomerRepository customerRepository;
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-public void create(@RequestBody Customer customer){
-    customerRepository.save(customer);
+    public ResponseEntity<Void>  create(@RequestBody Customer customer){
+        customerRepository.save(customer);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
+                "/{id}").buildAndExpand(customer.getId()).toUri();
 
+        return ResponseEntity.created(location).build();
 }
-    @RequestMapping(value = "/{id}")
-public Customer read(@PathVariable String id){
-    return  customerRepository.findOne(id);
+    @RequestMapping(value = "/{userName}")
+    public Customer read(@PathVariable String userName){
+
+        return  customerRepository.findByUserName(userName);
+
+        //return ResponseEntity.created(location).build();
 }
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
 public void update(@RequestBody Customer customer){

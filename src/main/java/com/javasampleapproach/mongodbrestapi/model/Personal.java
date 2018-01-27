@@ -1,5 +1,9 @@
 package com.javasampleapproach.mongodbrestapi.model;
 import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 public class Personal implements Serializable{
 
@@ -10,31 +14,28 @@ public class Personal implements Serializable{
     private String password;
     private String email;
     private String role;
-    private String preferences;
-    private String activeProject;
-    private String notification_preferences;
 
-    private Boolean status;
-    private Boolean DefectNotification;
-    private Boolean page_status;
-    private Boolean widget_status;
-    private String Dasboard_preferences;
-    private String Widgets;
-    private String Widgets_name;
+    private String activeProject;
+    private String status;
+    private String defectnotification;
+    private String page_status;
+    private ArrayList widget_status;
+
+
+    private ArrayList Widget_name;
     private String icons;
-    private int order;
-    private String security;
+    private ArrayList order;
+
     private String question;
     private String answer;
-    private String Projects;
-    private String ProjectName;
-    private String ActProjectName;
-    private String URL;
-    private String Description;
+    private ArrayList project;
+    private ArrayList url;
+    private ArrayList description;
+
 
     @Override
     public String toString() {
-        return String.format("personal:[username="+username+",password="+password+",email="+email+",role="+role+",preferences:[activeProject="+ActProjectName+",notification_preferences:[status="+status+",DefectNotification="+DefectNotification+",page-status="+page_status+"],Dasboard_preferences:[Widgets:[widget_name:["+Widgets_name+"],widget_status:["+widget_status+"],order:["+order+"],icons="+icons+"]]],security:[question="+question+",answer="+answer+"],Projects:[Projectname:["+ProjectName+"],URL:["+URL+"],Description:["+Description+"]]]");
+        return "personal:[username="+username+",password="+password+",email="+email+",role="+role+",activeProject="+activeProject+",status="+status+",defectnotification="+defectnotification+",page_status="+page_status+",icons="+icons+",question="+question+",answer="+answer+",project [project="+project+"],url [url="+url+"],description [description="+description+"],widget_name [Widget_name="+Widget_name+"],widget_status [widget_status="+widget_status+"],order [order="+order+"]]";
     }
 
     public String getId() {
@@ -77,14 +78,6 @@ public class Personal implements Serializable{
         this.role = role;
     }
 
-    public String getPreferences() {
-        return preferences;
-    }
-
-    public void setPreferences(String preferences) {
-        this.preferences = preferences;
-    }
-
     public String getActiveProject() {
         return activeProject;
     }
@@ -93,69 +86,7 @@ public class Personal implements Serializable{
         this.activeProject = activeProject;
     }
 
-    public String getNotification_preferences() {
-        return notification_preferences;
-    }
 
-    public void setNotification_preferences(String notification_preferences) {
-        this.notification_preferences = notification_preferences;
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
-    public Boolean getDefectNotification() {
-        return DefectNotification;
-    }
-
-    public void setDefectNotification(Boolean defectNotification) {
-        DefectNotification = defectNotification;
-    }
-
-    public Boolean getPage_status() {
-        return page_status;
-    }
-
-    public void setPage_status(Boolean page_status) {
-        this.page_status = page_status;
-    }
-
-    public Boolean getWidget_status() {
-        return widget_status;
-    }
-
-    public void setWidget_status(Boolean widget_status) {
-        this.widget_status = widget_status;
-    }
-
-    public String getDasboard_preferences() {
-        return Dasboard_preferences;
-    }
-
-    public void setDasboard_preferences(String dasboard_preferences) {
-        Dasboard_preferences = dasboard_preferences;
-    }
-
-    public String getWidgets() {
-        return Widgets;
-    }
-
-    public void setWidgets(String widgets) {
-        Widgets = widgets;
-    }
-
-    public String getWidgets_name() {
-        return Widgets_name;
-    }
-
-    public void setWidgets_name(String widgets_name) {
-        Widgets_name = widgets_name;
-    }
 
     public String getIcons() {
         return icons;
@@ -163,22 +94,6 @@ public class Personal implements Serializable{
 
     public void setIcons(String icons) {
         this.icons = icons;
-    }
-
-    public int getOrder() {
-        return order;
-    }
-
-    public void setOrder(int order) {
-        this.order = order;
-    }
-
-    public String getSecurity() {
-        return security;
-    }
-
-    public void setSecurity(String security) {
-        this.security = security;
     }
 
     public String getQuestion() {
@@ -197,43 +112,80 @@ public class Personal implements Serializable{
         this.answer = answer;
     }
 
-    public String getProjects() {
-        return Projects;
+    public String getStatus() {
+        return status;
     }
 
-    public void setProjects(String projects) {
-        Projects = projects;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public String getProjectName() {
-        return ProjectName;
+
+
+    public String getPage_status() {
+        return page_status;
     }
 
-    public void setProjectName(String projectName) {
-        ProjectName = projectName;
+    public void setPage_status(String page_status) {
+        this.page_status = page_status;
     }
 
-    public String getURL() {
-        return URL;
+    public ArrayList getWidget_status() {
+        return widget_status;
     }
 
-    public void setURL(String URL) {
-        this.URL = URL;
+    public void setWidget_status(ArrayList widget_status) {
+        this.widget_status = widget_status;
     }
 
-    public String getDescription() {
-        return Description;
+    public ArrayList getWidget_name() {
+        return Widget_name;
     }
 
-    public void setDescription(String description) {
-        Description = description;
+    public void setWidget_name(ArrayList widget_name) {
+        Widget_name = widget_name;
     }
 
-    public String getActProjectName() {
-        return ActProjectName;
+    public ArrayList getOrder() {
+        return order;
     }
 
-    public void setActProjectName(String actProjectName) {
-        ActProjectName = actProjectName;
+    public void setOrder(ArrayList order) {
+        this.order = order;
+    }
+
+
+    public ArrayList getUrl() {
+        return url;
+    }
+
+    public void setUrl(ArrayList url) {
+        this.url = url;
+    }
+
+
+
+    public ArrayList getProject() {
+        return project;
+    }
+
+    public void setProject(ArrayList project) {
+        this.project = project;
+    }
+
+    public String getDefectnotification() {
+        return defectnotification;
+    }
+
+    public void setDefectnotification(String defectnotification) {
+        this.defectnotification = defectnotification;
+    }
+
+    public ArrayList getDescription() {
+        return description;
+    }
+
+    public void setDescription(ArrayList description) {
+        this.description = description;
     }
 }
