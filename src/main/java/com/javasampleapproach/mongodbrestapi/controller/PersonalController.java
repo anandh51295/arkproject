@@ -1,8 +1,10 @@
 package com.javasampleapproach.mongodbrestapi.controller;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.util.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -62,9 +64,20 @@ public class PersonalController {
 
     @RequestMapping(value = "/{id}")
     public String read(@PathVariable String id){
-        //ObjectMapper mapper = new ObjectMapper();
+        String ar;
+        String jsonString;
+        ObjectMapper mapper = new ObjectMapper();
+        ar=personalRepository.findOne(id).toString();
+        try {
+        jsonString = mapper.writeValueAsString(ar);
         //mapper.configure(DeserializationFeature.valueOf(), true);
-        return  personalRepository.findOne(id).toString();
+        return  jsonString;
+        }
+        catch (JsonProcessingException e) {
+
+            e.printStackTrace();
+        }
+        return  null;
     }
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void update(@RequestBody Personal personal){
