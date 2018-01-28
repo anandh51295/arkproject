@@ -4,7 +4,6 @@ package com.javasampleapproach.mongodbrestapi.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.util.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -31,53 +30,13 @@ public class PersonalController {
         return ResponseEntity.created(location).build();
     }
 
-//    @RequestMapping(method=RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
-//    @ResponseBody
-//    public void savePerson(@RequestBody PersonWrapper wrapper) {
-//        List<String> response = new ArrayList<String>();
-//        for (Personal personal: wrapper.getWidget()){
-//            personalRepository.save(personal);
-//            //response.add("Saved Widgets: " + personal.toString());
-//        }
-//        for (Personal personal: wrapper.getStatus_widget()){
-//            personalRepository.save(personal);
-//            //response.add("Saved Widgets: " + personal.toString());
-//        }
-//        for (Personal personal: wrapper.getOrders()){
-//            personalRepository.save(personal);
-//            //response.add("Saved Widgets: " + personal.toString());
-//        }
-//        for (Personal personal: wrapper.getProject()){
-//            personalRepository.save(personal);
-//            //response.add("Saved Widgets: " + personal.toString());
-//        }
-//        for (Personal personal: wrapper.getLink()){
-//            personalRepository.save(personal);
-//            //response.add("Saved Widgets: " + personal.toString());
-//        }
-//        for (Personal personal: wrapper.getDescribe()){
-//            personalRepository.save(personal);
-//            //response.add("Saved Widgets: " + personal.toString());
-//        }
-//
-//    }
 
-    @RequestMapping(value = "/{id}")
-    public String read(@PathVariable String id){
-        String ar;
-        String jsonString;
-        ObjectMapper mapper = new ObjectMapper();
-        ar=personalRepository.findOne(id).toString();
-        try {
-        jsonString = mapper.writeValueAsString(ar);
-        //mapper.configure(DeserializationFeature.valueOf(), true);
-        return  jsonString;
-        }
-        catch (JsonProcessingException e) {
+    @RequestMapping(value = "/{username}")
+    public Personal read(@PathVariable String username){
+        Personal ar;
+        ar=personalRepository.findByUsername(username);
+        return ar;
 
-            e.printStackTrace();
-        }
-        return  null;
     }
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void update(@RequestBody Personal personal){

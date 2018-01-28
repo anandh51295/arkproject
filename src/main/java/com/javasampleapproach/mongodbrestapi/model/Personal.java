@@ -23,6 +23,7 @@ public class Personal implements Serializable{
 
 
     private ArrayList Widget_name;
+    private ArrayList widget;
     private String icons;
     private ArrayList order;
 
@@ -33,10 +34,10 @@ public class Personal implements Serializable{
     private ArrayList description;
 
 
-    @Override
-    public String toString() {
-        return "personal:[username="+username+",password="+password+",email="+email+",role="+role+",activeProject="+activeProject+",status="+status+",defectnotification="+defectnotification+",page_status="+page_status+",icons="+icons+",question="+question+",answer="+answer+",project [project="+project+"],url [url="+url+"],description [description="+description+"],widget_name [Widget_name="+Widget_name+"],widget_status [widget_status="+widget_status+"],order [order="+order+"]]";
-    }
+//    @Override
+//    public String toString() {
+//        return "personal:[username="+username+",password="+password+",email="+email+",role="+role+",activeProject="+activeProject+",status="+status+",defectnotification="+defectnotification+",page_status="+page_status+",icons="+icons+",question="+question+",answer="+answer+",project [project="+project+"],url [url="+url+"],description [description="+description+"],widget_name [Widget_name="+Widget_name+"],widget_status [widget_status="+widget_status+"],order [order="+order+"]]";
+//    }
 
     public String getId() {
         return id;
@@ -187,5 +188,13 @@ public class Personal implements Serializable{
 
     public void setDescription(ArrayList description) {
         this.description = description;
+    }
+
+    public ArrayList getWidget() {
+        return widget;
+    }
+
+    public void setWidget(ArrayList widget) {
+        this.widget = widget;
     }
 }
