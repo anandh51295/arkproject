@@ -19,19 +19,21 @@ public class Personal implements Serializable{
     private String status;
     private String defectnotification;
     private String page_status;
-    private ArrayList widget_status;
 
 
-    private ArrayList Widget_name;
+
+
     private ArrayList widget;
     private String icons;
-    private ArrayList order;
+
 
     private String question;
     private String answer;
     private ArrayList project;
-    private ArrayList url;
-    private ArrayList description;
+
+
+
+
 
 
 //    @Override
@@ -131,38 +133,7 @@ public class Personal implements Serializable{
         this.page_status = page_status;
     }
 
-    public ArrayList getWidget_status() {
-        return widget_status;
-    }
 
-    public void setWidget_status(ArrayList widget_status) {
-        this.widget_status = widget_status;
-    }
-
-    public ArrayList getWidget_name() {
-        return Widget_name;
-    }
-
-    public void setWidget_name(ArrayList widget_name) {
-        Widget_name = widget_name;
-    }
-
-    public ArrayList getOrder() {
-        return order;
-    }
-
-    public void setOrder(ArrayList order) {
-        this.order = order;
-    }
-
-
-    public ArrayList getUrl() {
-        return url;
-    }
-
-    public void setUrl(ArrayList url) {
-        this.url = url;
-    }
 
 
 
@@ -182,13 +153,6 @@ public class Personal implements Serializable{
         this.defectnotification = defectnotification;
     }
 
-    public ArrayList getDescription() {
-        return description;
-    }
-
-    public void setDescription(ArrayList description) {
-        this.description = description;
-    }
 
     public ArrayList getWidget() {
         return widget;
@@ -197,4 +161,6 @@ public class Personal implements Serializable{
     public void setWidget(ArrayList widget) {
         this.widget = widget;
     }
+
+
 }
