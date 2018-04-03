@@ -9,4 +9,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(collectionResourceRel = "projectdetails", path = "projectdetails")
 public interface ProjectdetailsRepository extends MongoRepository<Projectdetails, String> {
     Projectdetails findByProject(@Param("project") String name);
+
 }
