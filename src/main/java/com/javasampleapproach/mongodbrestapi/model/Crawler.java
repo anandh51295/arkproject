@@ -16,6 +16,7 @@ public class Crawler implements Serializable {
     private ArrayList value ;
     private ArrayList meta ;
     private ArrayList div ;
+    private ArrayList pagedata ;
 
     public String getId() {
         return id;
@@ -55,5 +56,13 @@ public class Crawler implements Serializable {
 
     public void setDiv(ArrayList div) {
         this.div = div;
+    }
+
+    public ArrayList getPagedata() {
+        return pagedata;
+    }
+
+    public void setPagedata(ArrayList pagedata) {
+        this.pagedata = pagedata;
     }
 }
